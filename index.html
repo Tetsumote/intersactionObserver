@@ -9,9 +9,9 @@
 <body>
     <section class="article">
         <div class="article__image">
-            <img class="anim" src="img/artocle_bg.svg" alt="">
+            <img class="anim" src="img/artocle_bg.svg" alt="" data-delay="0s">
         </div>
-        <div class="article__text">
+        <div class="article__text anim" data-delay=".5s">
             <h1>Find best choices</h1>
             <p>Many examples of how much 
                 time can take to find real good 
@@ -19,7 +19,7 @@
                 beautiful design with prepare
                 components. Adjust it for real 
                 pourpose.</p>
-            <div class="article__text__social">
+            <div class="article__text__social anim" data-delay=".7s">
                 <img src="img/twitter.svg" alt="">
                 <img src="img/facebook.svg" alt="">
                 <img src="img/share.svg" alt="">
@@ -28,9 +28,9 @@
     </section>
     <section class="mobile">
         <div class="mobile__image">
-            <img class="anim" src="img/mobile_bg.svg" alt="">
+            <img class="anim" src="img/mobile_bg.svg" alt="" data-delay="0s">
         </div>
-        <div class="mobile__text">
+        <div class="mobile__text anim" data-delay=".5s">
             <h1>Think about mobile first</h1>
             <p>Many examples of how much 
                 time can take to find real good 
@@ -38,7 +38,7 @@
                 beautiful design with prepare
                 components. Adjust it for real 
                 pourpose.</p>
-            <div class="mobile__text__social">
+            <div class="mobile__text__social anim" data-delay=".7s">
                 <img src="img/twitter.svg" alt="">
                 <img src="img/facebook.svg" alt="">
                 <img src="img/share.svg" alt="">
@@ -47,9 +47,9 @@
     </section>
     <section class="plan">
         <div class="plan__image">
-            <img class="anim" src="img/plan_bg.svg" alt="">
+            <img class="anim" src="img/plan_bg.svg" alt="" data-delay="0s">
         </div>
-        <div class="plan__text">
+        <div class="plan__text anim"  data-delay=".5s">
             <h1>Plan all your moves</h1>
             <p>Many examples of how much 
                 time can take to find real good 
@@ -57,7 +57,7 @@
                 beautiful design with prepare
                 components. Adjust it for real 
                 pourpose.</p>
-            <div class="plan__text__social">
+            <div class="plan__text__social anim" data-delay=".7s">
                 <img src="img/twitter.svg" alt="">
                 <img src="img/facebook.svg" alt="">
                 <img src="img/share.svg" alt="">
@@ -71,7 +71,7 @@
     observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
                 if(entry.intersectionRatio > 0) {
-                    entry.target.style.animation = `anim1 1s forwards ease-out`;
+                    entry.target.style.animation = `anim1 1s ${entry.target.dataset.delay} forwards ease-out`;
                 }
                 else {
                     entry.target.style.animation = 'none';
