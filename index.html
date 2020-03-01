@@ -9,7 +9,7 @@
 <body>
     <section class="article">
         <div class="article__image">
-            <img src="img/artocle_bg.svg" alt="">
+            <img class="anim" src="img/artocle_bg.svg" alt="">
         </div>
         <div class="article__text">
             <h1>Find best choices</h1>
@@ -28,7 +28,7 @@
     </section>
     <section class="mobile">
         <div class="mobile__image">
-            <img src="img/mobile_bg.svg" alt="">
+            <img class="anim" src="img/mobile_bg.svg" alt="">
         </div>
         <div class="mobile__text">
             <h1>Think about mobile first</h1>
@@ -47,7 +47,7 @@
     </section>
     <section class="plan">
         <div class="plan__image">
-            <img src="img/plan_bg.svg" alt="">
+            <img class="anim" src="img/plan_bg.svg" alt="">
         </div>
         <div class="plan__text">
             <h1>Plan all your moves</h1>
@@ -65,5 +65,23 @@
         </div>
     
     </section>
+
+<script>
+    const images = document.querySelectorAll('.anim');
+    observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+                if(entry.intersectionRatio > 0) {
+                    entry.target.style.animation = `anim1 1s forwards ease-out`;
+                }
+                else {
+                    entry.target.style.animation = 'none';
+                }
+            })
+    })
+
+    images.forEach(image => {
+            observer.observe(image)
+        })
+</script>
 </body>
 </html>
